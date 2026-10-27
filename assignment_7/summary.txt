@@ -1,0 +1,25 @@
+Assignment 7 - Techniques Summary
+
+I used parallel lists to store the month names and their precipitation
+amounts. A for loop visits each month, and a while loop repeats the input
+prompt until a valid number from 0.0 through 366.0 is entered. I used
+float() to convert input, if statements to check the range, and
+try/except ValueError to handle nonnumeric input.
+
+I used sum(), len(), max(), and min() to calculate the total, average,
+highest, and lowest precipitation. The index() method connects the highest
+and lowest amounts to the matching month names. If amounts are tied,
+index() selects the first matching month. Formatted strings control the
+decimal places in the output.
+
+I divided the work into functions and called them from main(). I used
+with open() to write and read a text file containing one month,amount
+record per line. In the chart program, strip() and split() separate each
+record, tuple unpacking assigns the two fields, float() converts the
+amount, and append() adds each value to its list.
+
+I used a list comprehension and string slicing to shorten the month
+labels to three letters. Matplotlib creates a two-dimensional bar chart
+with a title and labeled axes. The chart program also handles a missing
+or incorrectly formatted input file. Matplotlib is installed in a
+virtual environment so it does not change the global Python installation.
