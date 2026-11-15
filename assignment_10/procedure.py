@@ -1,0 +1,41 @@
+import math
+
+
+class Procedure:
+    def __init__(self, description, date, practitioner, charge):
+        self.__description = description
+        self.__date = date
+        self.__practitioner = practitioner
+        self.set_charge(charge)
+
+    def get_description(self):
+        return self.__description
+
+    def get_date(self):
+        return self.__date
+
+    def get_practitioner(self):
+        return self.__practitioner
+
+    def get_charge(self):
+        return self.__charge
+
+    def set_description(self, description):
+        self.__description = description
+
+    def set_date(self, date):
+        self.__date = date
+
+    def set_practitioner(self, practitioner):
+        self.__practitioner = practitioner
+
+    def set_charge(self, charge):
+        if not math.isfinite(charge) or charge <= 0:
+            raise ValueError('The charge must be a finite positive number.')
+        self.__charge = charge
+
+    def __str__(self):
+        return (f'Procedure: {self.__description}\n'
+                f'Date: {self.__date}\n'
+                f'Practitioner: {self.__practitioner}\n'
+                f'Charge: {self.__charge:.2f}')
